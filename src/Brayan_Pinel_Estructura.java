@@ -1,4 +1,5 @@
 
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -61,6 +62,7 @@ public class Brayan_Pinel_Estructura {
             
             cuentaPrimas++;
         
+                
             int aleatorioNumero = random.nextInt(100) + 1;
             System.out.println("Número generado: " + aleatorioNumero);
                     int contarDivisor = 0;
@@ -80,10 +82,40 @@ public class Brayan_Pinel_Estructura {
                  System.out.println("El numero "+aleatorioNumero+ "No es primo");
              }
             
-            System.out.println("Los divisores de " + aleatorioNumero + " son: " + aleatorioNumero);
+            System.out.println("Los divisores de " + aleatorioNumero + " son: " + divisores);
                     break;
             
             
+        case 4:
+            
+            cuentaVotos++;
+                    System.out.print("Ingrese la cantidad de votantes: ");
+                    int votadores = datos.nextInt();
+                    datos.nextLine(); 
+                    int azul = 0, rojo = 0, negro = 0, amarillo = 0, nulos = 0;
+                                int votosPuestos = 0;
+              
+            
+                     while (votosPuestos < votadores) {
+                        System.out.print("Ingrese el voto (AZUL, ROJO, NEGRO, AMARILLO): ");
+                        String vote = datos.nextLine().toUpperCase();
+
+                        if (vote.equals("AZUL")) {
+                            azul++;
+                        } else if (vote.equals("ROJO")) {
+                            rojo++;
+                        } else if (vote.equals("NEGRO")) {
+                            negro++;
+                        } else if (vote.equals("AMARILLO")) {
+                            amarillo++;
+                        } else {
+                            nulos++;
+                        }
+                        votosPuestos++;
+                    }
+                    
+                    
+                    
     }
     
     
