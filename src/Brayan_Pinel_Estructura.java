@@ -16,7 +16,7 @@ public class Brayan_Pinel_Estructura {
         Scanner datos=new Scanner(System.in);
      Random random = new Random();
     int opciones;
-        int cuentaReversa = 0, numeroPerfecto = 0, cuentaVotos=0,cuentaPrimas=0;
+        int contarAlreves = 0, numeroPerfecto = 0, contarVotos=0,cuentaPrimas=0;
 
    System.out.println("MENU");
    System.out.println("1. Palabras Alreves");
@@ -31,7 +31,7 @@ public class Brayan_Pinel_Estructura {
     switch(opciones){
         
         case 1:
-            cuentaReversa++;
+            contarAlreves++;
             System.out.println("Ingrese una palabra");
         
         String numero = datos.nextLine();
@@ -88,7 +88,7 @@ public class Brayan_Pinel_Estructura {
             
         case 4:
             
-            cuentaVotos++;
+            contarVotos++;
                     System.out.print("Ingrese la cantidad de votantes: ");
                     int votadores = datos.nextInt();
                     datos.nextLine(); 
@@ -100,7 +100,7 @@ public class Brayan_Pinel_Estructura {
                         System.out.print("Ingrese el voto (AZUL, ROJO, NEGRO, AMARILLO): ");
                         String vote = datos.nextLine().toUpperCase();
 
-                        if (vote.equals("AZUL")) {
+                              if (vote.equals("AZUL")) {
                             azul++;
                         } else if (vote.equals("ROJO")) {
                             rojo++;
@@ -114,7 +114,40 @@ public class Brayan_Pinel_Estructura {
                         votosPuestos++;
                     }
                     
-                    
+                       int notasValidas=azul+rojo+amarillo+negro;
+                       
+                       if(notasValidas<0.6* votadores){
+                           System.out.println("VOTACIÓN FALLIDA");
+                    } else {
+                        String ganador = "AZUL";
+            
+                        int votosMaximo = azul;
+                   if (rojo > votosMaximo) { ganador = "ROJO"; votosMaximo = rojo; }
+                       
+                       if (negro > votosMaximo) { ganador = "ROJO"; votosMaximo = negro; }
+                       if (amarillo > votosMaximo) { ganador = "ROJO"; votosMaximo = amarillo; }
+                       
+                       System.out.println("La planilla que gano es: "+ganador);
+                       }
+                   break;
+                           
+        case 5:
+            
+            System.out.println("El programa ya termino");
+               System.out.println("Las veces que se ingreso a las opciones son estas:");        
+            System.out.println("1 - Palabra Alreves: " + contarAlreves);
+                    System.out.println("2 - Número Perfecto: " + numeroPerfecto);
+                    System.out.println("3 - Primos: " + cuentaPrimas);
+                    System.out.println("4 - Votaciones: " + contarVotos);
+    break;
+    
+        
+    
+    
+    
+    
+    
+    }
                     
     }
     
