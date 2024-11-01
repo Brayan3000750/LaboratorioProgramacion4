@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Brayan_Pinel_Estructura {
     public static void main(String[] args){
         Scanner datos=new Scanner(System.in);
-    
+    Random random = new Random();
     int opciones;
         int cuentaReversa = 0, numeroPerfecto = 0, cuentaVotos=0,cuentaPrimas=0;
 
@@ -61,11 +61,24 @@ public class Brayan_Pinel_Estructura {
             
             cuentaPrimas++;
         
+            int aleatorioNumero = random.nextInt(100) + 1;
+            System.out.println("Número generado: " + aleatorioNumero);
+                    int contarDivisor = 0;
+                    String divisores = "";
             
+             for (int i = 1; i <= aleatorioNumero; i++) {
+                        if (aleatorioNumero % i == 0) {
+                            contarDivisor++;
+                            divisores += i + " ";
+                        }
+                    }
             
-            
-            
-            
+             if(contarDivisor==2){
+                 System.out.println("El numero es: "+aleatorioNumero+"Porque solo tiene dos divisores");
+              
+             }else{
+                 System.out.println("El numero "+aleatorioNumero+ "No es primo");
+             }
             
             
             
