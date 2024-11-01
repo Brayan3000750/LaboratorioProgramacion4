@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Brayan_Pinel_Estructura {
     public static void main(String[] args){
         Scanner datos=new Scanner(System.in);
-    Random random = new Random();
+     Random random = new Random();
     int opciones;
         int cuentaReversa = 0, numeroPerfecto = 0, cuentaVotos=0,cuentaPrimas=0;
 
@@ -80,7 +80,8 @@ public class Brayan_Pinel_Estructura {
                  System.out.println("El numero "+aleatorioNumero+ "No es primo");
              }
             
-            
+            System.out.println("Los divisores de " + aleatorioNumero + " son: " + aleatorioNumero);
+                    break;
             
             
     }
